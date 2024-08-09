@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Animal {
     // Atributos
     private int codigo, idade;
-    private String nome, dieta, habitat;
+    private String nome, dieta, habitat, especie;
     private float peso;
     private LocalDate dataNascimento;
 
@@ -13,7 +13,7 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(int codigo, int idade, String nome, String dieta, String habitat, float peso, LocalDate dataNascimento) {
+    public Animal(int codigo, int idade, String nome, String dieta, String habitat, float peso, LocalDate dataNascimento, String especie) {
         this.codigo = codigo;
         this.idade = idade;
         this.nome = nome;
@@ -21,6 +21,7 @@ public class Animal {
         this.habitat = habitat;
         this.peso = peso;
         this.dataNascimento = dataNascimento;
+        this.especie = especie;
     }
 
     // Getters e Setters
@@ -78,5 +79,36 @@ public class Animal {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
+    public void alterarAnimal(int codigo, int idade, String nome, String dieta, String habitat, float peso, LocalDate dataNascimento, String especie) {
+        this.codigo = codigo;
+        this.idade = idade;
+        this.nome = nome;
+        this.dieta = dieta;
+        this.habitat = habitat;
+        this.peso = peso;
+        this.dataNascimento = dataNascimento;
+        this.especie = especie;
+    }
+
+    @Override
+    public String toString() {
+        return "Código " + codigo + "#\n" +
+                "Nome: " + nome +
+                "\nIdade: " + idade +
+                "\nEspécie: " + especie +
+                "\nData de nascimento: " + dataNascimento +
+                "\nPeso: " + String.format("%.2f", peso) +
+                "\nHabitat: " + habitat +
+                "\nDieta: " + dieta;
     }
 }
